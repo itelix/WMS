@@ -1,0 +1,12 @@
+<layout_type>		# 0, 1 or 2
+<bots_num>		# = n
+<bot_1_starting_pos>	# int_x int_y
+<bot_2_starting_pos>
+...
+<bot_n_starting_pos>
+<requests_num>		# = m
+<request_1_mvc_1>	# alley_num bay_num int_mvc
+<request_2_mvc_2>
+...
+<request_m_mvc_m>
+

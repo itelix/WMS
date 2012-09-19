@@ -1,0 +1,2 @@
+Timestamp;TestCase;Algorithm;Seed;Unused;Total Duration[ms];Avg priority;Roads Count;Total requests;Throughput;Avg distance;Avg time;Roads to MVC Count;Roads to storage Count;Roads escape Count;Avg to MVC distance;Avg to storage distance;Avg escape distance;Avg to MVC time;Avg to storage time;Avg escape time
+Wed Sep 05 04:45:12 EDT 2012;RouteChooseTest_2;RandomRealizer;123;;7000;0.99;3;1;0.14285714285714285;900.0;2566.6666666666665;1;1;1;600.0;1400.0;700.0;3600.0;3400.0;700.0

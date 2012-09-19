@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.smb</groupId>
+  <artifactId>wms</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>wms-spec</module>
+  	<module>wms-controller</module>
+  	<module>wms-structure</module>
+  	<module>wms-optimalizer</module>
+  	<module>wms-view</module>
+  </modules>
+  <dependencies>
+  	  <dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>1.2.17</version>
+		<scope>compile</scope>
+	  </dependency>
+	  <dependency>
+	    <groupId>org.lwjgl.lwjgl</groupId>
+	    <artifactId>lwjgl</artifactId>
+	    <version>2.8.4</version>
+	</dependency>
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.10</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.google.guava</groupId>
+	    <artifactId>guava</artifactId>
+	    <version>13.0.1</version>
+	</dependency>
+	<dependency>
+		<groupId>commons-configuration</groupId>
+		<artifactId>commons-configuration</artifactId>
+		<version>1.8</version>
+	</dependency>
+	<dependency>
+		<groupId>org.hamcrest</groupId>
+		<artifactId>hamcrest-all</artifactId>
+		<version>1.3</version>
+	</dependency>          
+  </dependencies>
+
+	<properties>
+		<natives>${basedir}/target/natives/</natives>
+		<release.natives>natives/</release.natives>
+		<build.plugins.plugin.version>2.3.2</build.plugins.plugin.version>		
+	</properties>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			
+			
+			 <plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-surefire-plugin</artifactId>
+		        <configuration>
+		          <forkMode>pertest</forkMode> <!-- this is what triggers the problem, having it to "never" works also -->
+		          <systemProperties>
+		            <property>
+		              <name>log4j.configuration</name>
+		              <value>file:${project.build.directory}\classes\log4j.properties</value>
+		            </property>
+		          </systemProperties>
+		        </configuration>
+		      </plugin>
+						
+		</plugins>
+	</build>
+
+</project>
